@@ -1,0 +1,151 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --primary-color: #666666;
+    --secondary-color: #7896FF;
+    --primary-font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: var(--primary-font-family);
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.navbar h1 {
+    text-align: center;
+}
+
+.navbar-content {
+    display: flex;
+    width: 25vw;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+
+.navbar * {
+    color: #ffffff;
+}
+
+a.nav-link {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.login {
+    background-color: #ffffff;
+    width: 50vw;
+    margin: 5rem auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    width: 98%;
+    padding: 0.3rem;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.form-label {
+    font-size: 1.3rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.register-heading {
+    font-size: 3rem;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-success {
+    background-color: #28A745;
+    color: #ffffff;
+    padding: 14px 25px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.form-error {
+    display: block;
+    color: red;
+}
+ 
+.alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;  width: 100vw;
+}
+
+.alert-success {
+    color: #0d462c;
+    background-color: #d1e7dd;
+    border-color: #bfddcf;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+@media only screen and (max-width: 576px){
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar-content {
+        width: 100vw;
+        margin-top: 5px;
+    }
+
+    a.nav-link:hover{
+        color: red;
+        text-decoration: underline;
+    }
+
+    .login {
+        margin: 2rem 7.5vw;
+        width: 80vw !important;
+    }
+
+    .form-control {
+        width: 95%;
+    }
+    .register-heading {
+        margin: 10px;
+    }
+}
