@@ -1,6 +1,8 @@
 <?php
 include "php/function/include.php";
-$userLoggedIn = isset($_SESSION['user']['id']);
+require_once('php/function/login.inc.php'); 
+require_once('php/function/user.inc.php'); 
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -10,14 +12,18 @@ $userLoggedIn = isset($_SESSION['user']['id']);
 </head>
 <nav class="navbar">
     <a href="index.php"><h1>Gezondheidsmeter</h1></a>
-    <div class="navbar-content <?=$userLoggedIn !== true ? 'justify-content-center' : 'justify-content-end'?>">
-        <?php if($userLoggedIn) { ?>
-            <a href="profile.php">ingelogd als: <span><?=$_SESSION['user']['username']?></span></a>
+    <div class="navbar-content">
+        <?php if(isset($_SESSION["session_id"])) { ?>
+            <a href="profile.php">Ingelogd als: <?php echo $user['first_name']; ?></a>
             <a class="nav-link" href="dashboard.php">Dashboard</a>
-            <a class="nav-link" href="logout.php">Uitloggen</a>
-        <?php } else { ?>
+            <form action="../php/function/logout.inc.php" method="post">
+                <button type="submit" class="logout_button" name="logout_submit">Logout</button>
+            </form>
+        <?php } ?>
+
+        <?php if(!isset($_SESSION["session_id"])) { ?>
             <a class="nav-link" href="login.php">Inloggen</a>
             <a  class="nav-link" href="register.php">Registeren</a>
-        <?php }?>
+        <?php } ?>
     </div>
 </nav>
