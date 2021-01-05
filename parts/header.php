@@ -1,7 +1,6 @@
 <?php
 include "php/function/include.php";
 require_once('php/function/login.inc.php'); 
-require_once('php/function/user.inc.php'); 
 
 ?>
 <head>
@@ -14,10 +13,10 @@ require_once('php/function/user.inc.php');
     <a href="index.php"><h1>Gezondheidsmeter</h1></a>
     <div class="navbar-content">
         <?php if(isset($_SESSION["session_id"])) { ?>
-            <a href="profile.php">Ingelogd als: <?php echo $user['first_name']; ?></a>
+            <a class="nav-link" href="account.php">My account</a>
             <a class="nav-link" href="dashboard.php">Dashboard</a>
             <form action="../php/function/logout.inc.php" method="post">
-                <button type="submit" class="logout_button" name="logout_submit">Logout</button>
+                <button class="nav-link" type="submit" class="logout_button" name="logout_submit">Logout</button>
             </form>
         <?php } ?>
 
