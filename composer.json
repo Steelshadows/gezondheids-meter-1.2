@@ -1,0 +1,8 @@
+{
+    "name": "sbs6/gezondheidsmeter",
+    "description": "a basic project for school",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.2"
+    }
+}

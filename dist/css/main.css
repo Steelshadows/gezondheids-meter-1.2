@@ -16,7 +16,7 @@
 body {
     background-color: var(--secondary-color);
 }
-.hide {display: none;}
+
 .navbar {
     background-color: var(--primary-color);
     padding: 10px;
