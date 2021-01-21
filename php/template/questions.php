@@ -22,8 +22,13 @@ foreach($questions as $question){
     }
     echo "</div>";
 }
-echo 
-    "<div class='question'>".
-    "<label>dit waren alle vragen, bedankt voor uw deelnamen</label>";
-    echo "</div>";
-echo '<button class = "submit" type="submit" name="submit" value="submit" style = \'display:none\'>Insturen</button></form>';
+echo "<div class='question'>".
+     "<label>dit waren alle vragen, bedankt voor uw deelnamen</label>";
+    
+echo "</div>";
+echo "<div class = 'buttonContainer'>";
+echo '<button class = "button" type="button" style = "float:left;" onclick="questionMin()">Click me-</button>';
+echo '<button class = "submit" type="submit" name="submit" value="submit" style = \'display:none !important;\'>Insturen</button>';
+echo '<button class = "button" type="button" style = "float:right;" onclick="questionPlus()">Click me+</button>';
+echo "</div>";
+echo '</form>';

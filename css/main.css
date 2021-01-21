@@ -122,6 +122,9 @@ a.nav-link {
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+.button, .submit{
+    border-radius: 12px;
+}
 
 @media only screen and (max-width: 576px){
     .navbar {

@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     if($result = $db_connection->fetchQuery($query, $params)){
         if(password_verify($password,$result["password"])){
             session_start();
-           $_SESSION['user'] = $result;
+            $_SESSION['user'] = $result;
 
             header("Location: dashboard.php");
         }

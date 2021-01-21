@@ -13,8 +13,8 @@ function questionPlus(){
         questionIndex++;
         revealQuestion(questionIndex);
     }
-    if(questionIndex < document.querySelectorAll(".question").length ){
-        document.querySelector(".submit").style.display = "block";
+    if(questionIndex + 1  == document.querySelectorAll(".question").length){
+        document.querySelector(".submit").style.display = "inline";
     }
 
 }

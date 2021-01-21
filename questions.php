@@ -21,9 +21,8 @@
     <?php include "includes/html/navbar.php" ?>
     <div>
     <?php include "php/template/questions.php" ?>
+
     </div>
-    <button onclick="questionPlus()">Click me+</button>
-    <button onclick="questionMin()">Click me-</button>
     <script>revealQuestion(0)</script>
 </body>
 </html>
