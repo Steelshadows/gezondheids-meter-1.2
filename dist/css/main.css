@@ -31,7 +31,7 @@ body {
 
 .navbar-content {
     display: flex;
-    width: 25vw;
+    width: 30vw;
     justify-content: space-between;
     margin-right: 15px;
 }
@@ -49,9 +49,9 @@ body {
 }
 
 a.nav-link {
-    margin: 0 15px;
+    /*margin: 0 15px;*/
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 
 .login {
@@ -132,6 +132,9 @@ a.nav-link {
 }
 .question {
     min-height: 125px;
+}
+.w33 {
+    width:30%;
 }
 
 @media only screen and (max-width: 576px){
