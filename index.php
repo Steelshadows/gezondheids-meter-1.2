@@ -1,5 +1,5 @@
 <?php
-require 'php/classes/db_connection.php';
+require 'php/classes/DB_Connection.php';
 $error = null;
 if(isset($_COOKIE['error'])) {
     $error = $_COOKIE['error'];
@@ -16,8 +16,9 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
     $username = $_POST['username'];
     $storedPW = null;
-    $query = "SELECT * FROM `user` WHERE `username` = ?";
+    $query = 'SELECT * FROM `user` WHERE `username` = ?';
     $params = [$username];
+    
     if($result = $db_connection->fetchQuery($query, $params)){
         if(password_verify($password,$result["password"])){
             session_start();

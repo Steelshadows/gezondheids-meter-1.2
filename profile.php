@@ -5,7 +5,7 @@
     header('location: index.php');
     }
 
-    require 'php/classes/db_connection.php';
+    require 'php/classes/DB_Connection.php';
     $db_connection = new db_connection();
     if(isset($_POST['submit'])){
         $sql = 'UPDATE `user` SET `username`= ? ,`email`= ? ,`first_name`= ? ,`last_name`= ?  WHERE `id` = ?';

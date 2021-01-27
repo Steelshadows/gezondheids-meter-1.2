@@ -1,5 +1,5 @@
 <?php
-    require 'php/classes/db_connection.php';
+    require 'php/classes/DB_Connection.php';
     $db_connection = new db_connection();
     $error = [];
     if(isset($_POST['submit'])){

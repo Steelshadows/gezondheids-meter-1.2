@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 //dotenv = Dotenv\Dotenv::createImmutable("./");
 //dotenv->load();
 
@@ -14,9 +14,9 @@ class db_connection {
     public $conn = null;
     public function __construct() { 
         $host = "localhost";
-        $username = "root";
-        $password = "";
-        $database_name = "gezondheidsmeter";
+        $username = "student4a8_521282";
+        $password = "t4qPxf";
+        $database_name = "student4a8_521282";
         try {
             $this->conn = new PDO("mysql:host=$host;dbname=$database_name",$username,$password);
         } catch (PDOException $e) {

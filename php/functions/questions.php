@@ -66,12 +66,15 @@ function getUserData( $UID ){
 }
 function updateUser($postData, $UID){
     $DB = new db_connection();
-    //var_dump($postData);
-    foreach($postData as $key => $post){
-
-        $type_id = $DB_questions = $DB->fetchQuery("SELECT `id` FROM `setting_type` WHERE `name` = ?",[$key])["id"];
-
-        $DB_questions = $DB->Query("INSERT INTO `user_setting` (`user_id`,`type_id`, `value`) VALUES (?,?,?)",[(int)$UID,(int)$type_id,(int)$post]);
-        
+   //echo "<pre>";
+   //var_dump($postData);
+   foreach($postData as $key => $post){
+       
+       $type_id = $db_questions = $DB->fetchQuery("SELECT `id` FROM `setting_type` WHERE `name` = ?",[$key])["id"];
+       
+       $db_questions = $DB->Query("INSERT INTO `user_setting` (`user_id`,`type_id`, `value`) VALUES (?,?,?)",[(int)$UID,(int)$type_id,(int)$post]);
+       //var_dump([(int)$UID,(int)$type_id,(int)$post,$db_questions]);
+       
     }
+    //echo "</pre>";
 }

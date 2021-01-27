@@ -1,10 +1,10 @@
 <?php
+    
     session_start();
-    require "php/classes/DB_Connection.php";
+    require_once "php/classes/DB_Connection.php";
+    require_once "php/functions/questions.php";
     $error = [];
-    if(isset($_POST['submit'])){
-        //var_dump($_POST);
-    }
+    
    
 ?>
 <!DOCTYPE html>
