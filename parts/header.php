@@ -9,15 +9,15 @@ $userLoggedIn = isset($_SESSION['user']['id']);
     <title>Gezondheidsmeter</title>
 </head>
 <nav class="navbar">
-    <h1>Gezondheidsmeter</h1>
+    <a href="dashboard.php"><h1>Gezondheidsmeter</h1></a>
     <div class="navbar-content <?=$userLoggedIn !== true ? 'justify-content-center' : 'justify-content-end'?>">
         <?php if($userLoggedIn) { ?>
-            <a href="profile.php">ingelogd als: <span><?=$_SESSION['user']['username']?></span></a>
-            <a class="nav-link" href="dashboard.php">dashboard</a>
-            <a class="nav-link" href="logout.php">uitloggen</a>
+            <a class="w33" href="profile.php">Ingelogd als: <span><?=$_SESSION['user']['username']?></span></a>
+            <a class="nav-link w33" href="dashboard.php">Dashboard</a>
+            <a class="nav-link w33" href="logout.php">Uitloggen</a>
         <?php } else { ?>
-            <a href="login.php" class="nav-link">inloggen</a>
-            <a href="register.php" class="nav-link">registeren</a>
+            <a href="index.php" class="nav-link w33">Inloggen</a>
+            <a href="register.php" class="nav-link w33">Registeren</a>
         <?php }?>
     </div>
 </nav>
