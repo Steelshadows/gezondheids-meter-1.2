@@ -1,5 +1,4 @@
 <?php
-    require 'vendor/autoload.php';
     require 'php/classes/db_connection.php';
     $db_connection = new db_connection();
     $error = [];

@@ -4,7 +4,6 @@
         setcookie('error', 'Je moet eerst ingelogd zijn om deze website te bekijken.');
         header('location: index.php');
     }
-    require "vendor/autoload.php";
     require "php/classes/DB_Connection.php";
     $error = [];
 ?>

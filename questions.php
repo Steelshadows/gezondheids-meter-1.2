@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require "vendor/autoload.php";
     require "php/classes/DB_Connection.php";
     $error = [];
     if(isset($_POST['submit'])){

@@ -1,5 +1,4 @@
 <?php
-require 'vendor/autoload.php';
 require 'php/classes/db_connection.php';
 $error = null;
 if(isset($_COOKIE['error'])) {
