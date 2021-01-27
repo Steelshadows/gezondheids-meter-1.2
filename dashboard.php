@@ -33,9 +33,13 @@
     unset($_SESSION['error'])
     ?>
 
-    <div>
-        <a href="questions.php" class="btn btn-btn-success">Vragen invullen</a> 
-        <?php include "php/template/dashboard.php"?></div>
+    <div class="inhoud" style="margin-top: 30px;display: flex;">
+        <div style="width: 70%">
+            <?php include "php/template/dashboard.php"?>
+        </div>
+        <div style="width: 30%; margin-top: 40px; font-weight: bold;font-size: 30px">
+            <a href="questions.php" class="btn btn-btn-success" style="text-decoration: none">Vragen invullen</a>
+        </div>
     </div>
 </body>
 </html>
