@@ -14,13 +14,13 @@ echo '<form method="POST" class="login">';
 foreach($questions as $question){
     $options = json_decode($question->options,true);
     echo 
-    "<div class='question'>".
+    "<div class='question' vervolg='$question->vervolg' trigger='$question->vervolg_trigger' questionId='$question->id'>".
     "<label class='questionshow'>".$question->question."</label>";
     echo "<br>";
     
     if($question->variation == 'radio'){
         foreach($options["options"] as $option){
-            echo "<br><input class='answers' type='radio' required name='".$question->type."' value=  '  ".$option["value"]."'>"."<label class='ans'>".$option["text"]."</label>";
+            echo "<br><input class='answers' type='radio' name='".$question->type."' value=  '  ".$option["value"]."'>"."<label class='ans'>".$option["text"]."</label>";
         }
     }
     else{
@@ -35,7 +35,7 @@ echo "<div class='question'>".
     
 echo "</div>";
 echo "<div class = 'buttonContainer'>";
-echo '<button class = "button min" type="button" style = "float:left;padding: 1%;margin-bottom: 3%;margin-left: 2%;" onclick="questionMin()">Vorige</button>';
+//echo '<button class = "button min" type="button" style = "float:left;padding: 1%;margin-bottom: 3%;margin-left: 2%;" onclick="questionMin()">Vorige</button>';
 echo '<button class = "submit" type="submit" name="submit" value="submit" style = \'display:none !important;margin-bottom: 3%;padding: 2%;\'>Insturen</button>';
 echo '<button class = "button plus" type="button" style = "float:right;padding: 1%;margin-bottom: 3%;margin-right: 2%;" onclick="questionPlus()">Volgende</button>';
 echo "</div>";

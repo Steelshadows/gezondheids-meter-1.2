@@ -3,7 +3,7 @@
 function getQuestionData(){
     $DB = new db_connection();
     $DB_questions = $DB->fetchAllQuery(
-        "SELECT question.id,`question`,`options`,setting_type.name as 'type_id', variation FROM `question` INNER JOIN `setting_type` ON question.type_id=setting_type.id"
+        "SELECT question.id,`question`,`options`,setting_type.name as 'type_id', variation , `vervolg` , `vervolg_trigger` FROM `question` INNER JOIN `setting_type` ON question.type_id=setting_type.id"
     );
     $questions = [];
     
@@ -14,6 +14,8 @@ function getQuestionData(){
         $question->question = $dbq["question"];
         $question->options = $dbq["options"];
         $question->variation = $dbq["variation"];
+        $question->vervolg = $dbq["vervolg"];
+        $question->vervolg_trigger = $dbq["vervolg_trigger"];
         array_push($questions,$question);
     }
     

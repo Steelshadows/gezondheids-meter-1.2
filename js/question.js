@@ -9,13 +9,36 @@ function revealQuestion(index){
     document.querySelectorAll(".question")[index].style.display = "block"
 }
 function questionPlus(){
+    checkval = null;
+    checkval2 = null;
     if(questionIndex < document.querySelectorAll(".question").length - 1 ){
         inputs = document.querySelectorAll(".question")[questionIndex].querySelectorAll('input');
-        
-        console.log(inputs[0].name)
-        console.log(inputs[0].type)
-        questionIndex++;
-        revealQuestion(questionIndex);
+        inputs.forEach((item)=>{
+            if (item.checked){
+                checkval = item.value;
+            }
+        });
+        console.log(checkval);
+        nextQ = document.querySelectorAll(".question")[questionIndex+1];
+        if(nextQ.getAttribute("vervolg") != 0){
+            checkQuestion = document.querySelector(".question[questionid='"+nextQ.getAttribute("vervolg")+"']");
+            checkInputs = checkQuestion.querySelectorAll('input')
+            checkInputs.forEach((item)=>{
+                if (item.checked){
+                    checkval2 = parseInt (item.value);
+                }    
+            });
+        }           
+        if(checkval != null){
+            if(checkval2 != nextQ.getAttribute("trigger")){
+                questionIndex++;
+            }
+            questionIndex++;
+            revealQuestion(questionIndex);
+        }
+        else{
+            alert('selecteer een keuze');
+        }
     }
     if(questionIndex + 1  == document.querySelectorAll(".question").length){
         document.querySelector(".submit").style.display = "inline";
