@@ -9,7 +9,8 @@ function getUsersData($UID){
     $questions['sleep'] = $DB->fetchQuery("SELECT AVG(user_setting.value) FROM user_setting INNER JOIN setting_type where user_setting.type_id = setting_type.id AND user_setting.user_id = ? AND setting_type.name LIKE 'sleep_%'",$params);
     $questions['sport'] = $DB->fetchQuery("SELECT AVG(user_setting.value) FROM user_setting INNER JOIN setting_type where user_setting.type_id = setting_type.id AND user_setting.user_id = ? AND setting_type.name LIKE 'sport_%'",$params);
     $questions['drugs'] = $DB->fetchQuery("SELECT AVG(user_setting.value) FROM user_setting INNER JOIN setting_type where user_setting.type_id = setting_type.id AND user_setting.user_id = ? AND setting_type.name LIKE 'drugs_%'",$params);
-    
+    $questions['alcohol'] = $DB->fetchQuery("SELECT AVG(user_setting.value) FROM user_setting INNER JOIN setting_type where user_setting.type_id = setting_type.id AND user_setting.user_id = ? AND setting_type.name LIKE 'alcohol_%'",$params);
+
     
     
     

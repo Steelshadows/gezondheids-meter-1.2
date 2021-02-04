@@ -23,6 +23,12 @@
         $_SESSION['user']['email'] = htmlspecialchars($_POST['email']);
         $_SESSION['user']['enabled'] = htmlspecialchars($_POST['enabled']);
     }
+    if(!empty($_POST['reset'])){
+        $db_connection->query('delete * from user_setting where user_id = ?',$_SESSION['user']['id'] );
+    }else{
+
+    }
+
 
 ?>
 <!doctype html>
@@ -51,6 +57,10 @@
         <label for="male">Gezondheidsmeter:</label><br>
         <label>Uit</label><input type="range" id="" name="enabled" min="0" max="1" value="<?=$_SESSION['user']['enabled']?>"><label>Aan</label><br>
         <input type="submit" name="submit" value="verzenden" class="btn-success">
+        <form action="" method="post">
+            <input type="hidden" name="name" value="reset">
+            <input class="btn-success" type="reset" name="reset" value="Reset gezondheidsmeters">
+        </form>
     </form>
 
 </body>

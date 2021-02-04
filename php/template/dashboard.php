@@ -52,4 +52,13 @@ Drugs:
 <h4>
     U bent <?= number_format($user["drugs"]["AVG(user_setting.value)"])?> procent goed bezig met uw drugs gebruik
 </h4>
+<br>
+<h2>
+    Alcohol:
+</h2>
+<progress value="<?= $user["alcohol"]["AVG(user_setting.value)"]?>" max="100"></progress>
+<h4>
+    U bent <?= number_format($user["alcohol"]["AVG(user_setting.value)"])?> procent goed bezig met uw drugs gebruik
+</h4>
+
 </div>
