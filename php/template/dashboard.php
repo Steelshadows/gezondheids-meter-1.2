@@ -14,7 +14,7 @@ echo "<h1>Dashboard</h1> ";
 </h3>
 <br>
 <h2>
-voeding:
+Voeding:
 </h2>
 <progress value="<?= $user["Voeding"]["AVG(user_setting.value)"]?>" max="100"></progress>
 <h4>
@@ -22,7 +22,7 @@ voeding:
 </h4>
 <br>
 <h2>
-werk:
+Werk:
 </h2>
 <progress value="<?= $user["work"]["AVG(user_setting.value)"]?>" max="100"></progress>
 <h4>
@@ -30,7 +30,7 @@ werk:
 </h4>
 <br>
 <h2>
-slaap:
+Slaap:
 </h2>
 <progress value="<?= $user["sleep"]["AVG(user_setting.value)"]?>" max="100"></progress>
 <h4>
@@ -38,7 +38,7 @@ slaap:
 </h4>
 <br>
 <h2>
-sport:
+Sport:
 </h2>
 <progress value="<?= $user["sport"]["AVG(user_setting.value)"]?>" max="100"></progress>
 <h4>
@@ -46,10 +46,19 @@ sport:
 </h4>
 <br>
 <h2>
-drugs:
+Drugs:
 </h2>
 <progress value="<?= $user["drugs"]["AVG(user_setting.value)"]?>" max="100"></progress>
 <h4>
     U bent <?= number_format($user["drugs"]["AVG(user_setting.value)"])?> procent goed bezig met uw drugs gebruik
 </h4>
+<br>
+<h2>
+    Alcohol:
+</h2>
+<progress value="<?= $user["alcohol"]["AVG(user_setting.value)"]?>" max="100"></progress>
+<h4>
+    U bent <?= number_format($user["alcohol"]["AVG(user_setting.value)"])?> procent goed bezig met uw drugs gebruik
+</h4>
+
 </div>

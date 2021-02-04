@@ -21,6 +21,12 @@
         $_SESSION['user']['last_name'] = htmlspecialchars($_POST['last_name']);
         $_SESSION['user']['email'] = htmlspecialchars($_POST['email']);
     }
+    if(!empty($_POST['reset'])){
+        $db_connection->query('delete * from user_setting where user_id = ?',$_SESSION['user']['id'] );
+    }else{
+
+    }
+
 
 ?>
 <!doctype html>
@@ -47,6 +53,10 @@
         <label>E-mail</label>
         <input type="text" name="email" id="" value="<?=$_SESSION['user']['email']?>" class="form-control">
         <input type="submit" name="submit" value="verzenden" class="btn-success">
+        <form action="" method="post">
+            <input type="hidden" name="name" value="reset">
+            <input class="btn-success" type="reset" name="reset" value="Reset gezondheidsmeters">
+        </form>
     </form>
 </body>
 </html>
