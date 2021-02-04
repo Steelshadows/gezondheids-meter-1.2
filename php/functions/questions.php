@@ -3,7 +3,7 @@
 function getQuestionData(){
     $DB = new db_connection();
     $DB_questions = $DB->fetchAllQuery(
-        "SELECT question.id,`question`,`options`,setting_type.name as 'type_id' FROM `question` INNER JOIN `setting_type` ON question.type_id=setting_type.id"
+        "SELECT question.id,`question`,`options`,setting_type.name as 'type_id', variation , `vervolg` , `vervolg_trigger` FROM `question` INNER JOIN `setting_type` ON question.type_id=setting_type.id"
     );
     $questions = [];
     
@@ -11,8 +11,11 @@ function getQuestionData(){
         $question = (object)[];
         $question->id = $dbq["id"];
         $question->type = $dbq["type_id"];
-        $question->question = $dbq["question"];;
-        $question->options = $dbq["options"];;
+        $question->question = $dbq["question"];
+        $question->options = $dbq["options"];
+        $question->variation = $dbq["variation"];
+        $question->vervolg = $dbq["vervolg"];
+        $question->vervolg_trigger = $dbq["vervolg_trigger"];
         array_push($questions,$question);
     }
     
@@ -69,11 +72,18 @@ function updateUser($postData, $UID){
    //echo "<pre>";
    //var_dump($postData);
    foreach($postData as $key => $post){
-       
-       $type_id = $db_questions = $DB->fetchQuery("SELECT `id` FROM `setting_type` WHERE `name` = ?",[$key])["id"];
-       
-       $db_questions = $DB->Query("INSERT INTO `user_setting` (`user_id`,`type_id`, `value`) VALUES (?,?,?)",[(int)$UID,(int)$type_id,(int)$post]);
-       //var_dump([(int)$UID,(int)$type_id,(int)$post,$db_questions]);
+
+
+        $type_id = $DB->fetchQuery("SELECT `id` FROM `setting_type` WHERE `name` = ?",[$key]);
+        if ($type_id != false){
+            $type_id = $type_id["id"];
+        }else{
+            $db_questions = $DB->Query("INSERT INTO `setting_type` (`name`) VALUES ( ? )",[$key]);
+            $type_id = $DB->fetchQuery("SELECT `id` FROM `setting_type` WHERE `name` = ?",[$key])["id"];
+        }
+        $db_questions = $DB->Query("INSERT INTO `user_setting` (`user_id`,`type_id`, `value`) VALUES (?,?,?)",[(int)$UID,(int)$type_id,(int)$post]);
+        //var_dump([(int)$UID,(int)$type_id,(int)$post,$db_questions]);
+
        
     }
     //echo "</pre>";

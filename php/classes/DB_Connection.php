@@ -13,10 +13,12 @@
 class db_connection {
     public $conn = null;
     public function __construct() { 
+      
         $host = "localhost";
-        $username = "root";
-        $password = "";
-        $database_name = "gezondheidsmeter";
+        $username = "student4a8_521282";
+        $password = "t4qPxf";
+        $database_name = "student4a8_521282";
+
         try {
             $this->conn = new PDO("mysql:host=$host;dbname=$database_name",$username,$password);
         } catch (PDOException $e) {
