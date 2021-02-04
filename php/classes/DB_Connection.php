@@ -14,9 +14,9 @@ class db_connection {
     public $conn = null;
     public function __construct() { 
         $host = "localhost";
-        $username = "root";
-        $password = "";
-        $database_name = "gezondheidsmeter";
+        $username = "niels";
+        $password = "niels";
+        $database_name = "gezondheid";
         //$host = "localhost";
         //$username = "student4a8_521282";
         //$password = "t4qPxf";
