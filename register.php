@@ -44,6 +44,7 @@
             $email = htmlspecialchars($_POST['email']);
             $firstName = htmlspecialchars($_POST['first_name']);
             $lastName = htmlspecialchars($_POST['last_name']);
+            $enabled = 1;
             $usernameExist = (int) $db_connection->fetchQuery('SELECT count(`username`) AS `count` FROM `user` WHERE `username` = ? ', [$username])['count'];
             if($usernameExist === 1){
                 $error['username'] = 'Gebruikersnaam wordt al gebruikt. Kies een andere.';
@@ -54,12 +55,13 @@
             } 
             if($usernameExist !== 1 && $emailExist !== 1){
                 try {
-                    $db_connection->query('INSERT INTO `user` (`username`, `password`, `first_name`, `last_name`, `email`) VALUES(?,?,?,?,?)', [
+                    $db_connection->query('INSERT INTO `user` (`username`, `password`, `first_name`, `last_name`, `email`, `enabled`) VALUES(?,?,?,?,?,?)', [
                         $username,
                         $password,
                         $firstName,
                         $lastName,
-                        $email
+                        $email,
+                        $enabled
                     ]);
                     $userId = $db_connection->getLastId();
                     $user = $db_connection->fetchQuery('SELECT * FROM `user` WHERE `id` = ?', [$userId]);
